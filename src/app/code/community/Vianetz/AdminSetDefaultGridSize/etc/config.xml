@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+   <modules>
+      <Vianetz_AdminSetDefaultGridSize>
+         <version>1.0.0</version>
+      </Vianetz_AdminSetDefaultGridSize>
+   </modules>
+
+   <global>
+      <helpers>
+         <vianetz_adminsetdefaultgridsize>
+            <class>Vianetz_AdminSetDefaultGridSize_Helper</class>
+         </vianetz_adminsetdefaultgridsize>
+      </helpers>
+      <models>
+         <vianetz_adminsetdefaultgridsize>
+            <class>Vianetz_AdminSetDefaultGridSize_Model</class>
+         </vianetz_adminsetdefaultgridsize>
+      </models>
+      <events>
+         <core_block_abstract_prepare_layout_before>
+            <observers>
+               <vianetz_adminsetdefaultgridsize_change_default_grid_limit>
+                  <class>Vianetz_AdminSetDefaultGridSize_Model_Observer</class>
+                  <method>changeDefaultLimit</method>
+               </vianetz_adminsetdefaultgridsize_change_default_grid_limit>
+            </observers>
+         </core_block_abstract_prepare_layout_before>
+      </events>
+   </global>
+</config>
